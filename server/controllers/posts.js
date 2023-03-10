@@ -16,6 +16,7 @@ export const getPosts = async (req, res) => {
 export const createPost = async (req, res) => {
   //Initializes the post from the request body
   const post = req.body;
+  console.log(post);
   //Creates a new post model
   const newPost = new PostMessage(post);
   try {
