@@ -21,7 +21,7 @@ const Post = ({ post }) => {
         image={post.selectedFile}
         title={post.title}
       />
-      <div classes={classes.overlay}>
+      <div className={classes.overlay}>
         <Typography variant="h6">{post.creator}</Typography>
         <Typography variant="body2">
           {moment(post.createdAt).fromNow()}
@@ -29,7 +29,7 @@ const Post = ({ post }) => {
       </div>
       <div className={classes.overlay2}>
         <Button style={{ color: "white" }} size="small" onClick={() => {}}>
-          <MoreHorizIcon fontsize="default" />
+          <MoreHorizIcon fontSize="medium" />
         </Button>
       </div>
       <div className={classes.details}>
@@ -44,12 +44,12 @@ const Post = ({ post }) => {
       </CardContent>
       <CardActions className={classes.cardActions}>
         <Button size="small" color="primary" onClick={() => {}}>
-          <ThumbUpAltAtIcon fontsize="small" />
+          <ThumbUpAltAtIcon fontSize="small" />
           Like
           {post.likeCount}
         </Button>
         <Button size="small" color="primary" onClick={() => {}}>
-          <DeleteIcon fontsize="small" />
+          <DeleteIcon fontSize="small" />
           Delete
         </Button>
       </CardActions>
