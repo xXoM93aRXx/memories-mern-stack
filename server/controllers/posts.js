@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import PostMessage from "../models/postMessage.js";
 
 //Function for getting all the posts from the database
@@ -28,4 +29,16 @@ export const createPost = async (req, res) => {
     //409 means that there was an error sending the data will return a message with the error message in json format
     res.status(409).json({ message: error.message });
   }
+};
+
+export const updatePost = async (req, res) => {
+  const { id: _id } = req.params;
+  const post = req.body;
+
+  if (!mongoose.Types.ObjectId.isValid(_id))
+    return res.status(404).send("No post found");
+
+  const updatedPost = await PostMessage.findById(_id, post, { new: true });
+
+  res.json(updatedPost);
 };
