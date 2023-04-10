@@ -6,7 +6,7 @@ import PostRoutes from "./routes/posts.js";
 
 import * as dotenv from "dotenv";
 
-dotenv.config;
+dotenv.config();
 
 //Initializes the app
 const app = express();
