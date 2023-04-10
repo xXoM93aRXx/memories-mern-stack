@@ -1,5 +1,7 @@
 export default (posts = [], action) => {
   switch (action.type) {
+    case "DELETE":
+      return posts.filter((post) => post._id !== action.payload);
     case "UPDATE":
       //Action payload in this case is the updated post, the next function checks if the post id is equal to the id of the updated post, then it returns the updated post, other than that it just returns the post as it is
       return posts.map((post) =>
