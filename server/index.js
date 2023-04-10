@@ -3,6 +3,11 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import PostRoutes from "./routes/posts.js";
+
+import * as dotenv from "dotenv";
+
+dotenv.config;
+
 //Initializes the app
 const app = express();
 //Let's the app use body parser and configures body parser
@@ -14,8 +19,7 @@ app.use(cors());
 app.use("/posts", PostRoutes);
 
 //Defines the Connection URL to mongodb and the PORT for the server
-const CONNECTION_URL =
-  "mongodb+srv://root:st9ND7o6BalgHkQF@cluster0.hedabsx.mongodb.net/?retryWrites=true&w=majority";
+const CONNECTION_URL = process.env.CONNECTION_URL;
 
 const PORT = process.env.PORT || 5000;
 
